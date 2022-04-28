@@ -1,0 +1,13 @@
+[package]
+name = "rust-diesel-examples"
+version = "0.1.0"
+edition = "2021"
+authors = ["marko atanasievski <marko.atanasievski@cartesi.io"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+uuid = { version = "0.8", features = ["v5"] }
+diesel = {version = "1.4", features = ["chrono", "postgres", "r2d2", "uuidv07", "serde_json", "numeric"]}
+chrono = "0.4"
