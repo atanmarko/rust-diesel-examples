@@ -8,6 +8,6 @@ authors = ["marko atanasievski <marko.atanasievski@cartesi.io"]
 
 [dependencies]
 
-uuid = { version = "0.8", features = ["v5"] }
+uuid = { version = "0.8", features = ["v4","v5"] }
 diesel = {version = "1.4", features = ["chrono", "postgres", "r2d2", "uuidv07", "serde_json", "numeric"]}
 chrono = "0.4"

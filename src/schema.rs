@@ -1,8 +1,8 @@
 table! {
-    marks (student, subject, mark, time) {
+    grades (student, subject, grade, time) {
         student -> Uuid,
         subject -> Int4,
-        mark -> Float4,
+        grade -> Float4,
         time -> Time,
     }
 }
@@ -20,9 +20,9 @@ table! {
 
 table! {
     subjects (index) {
+        index -> Int4,
         subject -> Varchar,
         teacher -> Nullable<Uuid>,
-        index -> Int4,
     }
 }
 
@@ -33,16 +33,16 @@ table! {
         last_name -> Varchar,
         degree -> Varchar,
         fully_employed -> Nullable<Bool>,
-        contract_timestamp -> Nullable<Timestamptz>,
+        contract_timestamp -> Timestamptz,
     }
 }
 
-joinable!(marks -> students (student));
-joinable!(marks -> subjects (subject));
+joinable!(grades -> students (student));
+joinable!(grades -> subjects (subject));
 joinable!(subjects -> teachers (teacher));
 
 allow_tables_to_appear_in_same_query!(
-    marks,
+    grades,
     students,
     subjects,
     teachers,
